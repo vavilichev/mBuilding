@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ObservableCollections</name>
+    </assembly>
+    <members>
+        <member name="T:ObservableCollections.Internal.CloneCollection`1">
+            <summary>
+            ReadOnly cloned collection.
+            </summary>
+        </member>
+        <member name="T:ObservableCollections.NotifyCollectionChangedEventArgs`1">
+            <summary>
+            Contract:
+                IsSingleItem ? (NewItem, OldItem) : (NewItems, OldItems)
+                Action.Add
+                    NewItem, NewItems, NewStartingIndex
+                Action.Remove
+                    OldItem, OldItems, OldStartingIndex
+                Action.Replace
+                    NewItem, NewItems, OldItem, OldItems, (NewStartingIndex, OldStartingIndex = samevalue)
+                Action.Move
+                    NewStartingIndex, OldStartingIndex
+                Action.Reset
+                    -
+            </summary>
+        </member>
+    </members>
+</doc>
