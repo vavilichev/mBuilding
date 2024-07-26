@@ -1,6 +1,4 @@
-﻿using NUnit.Framework.Constraints;
-
-namespace mBuilding.Scripts
+﻿namespace mBuilding.Scripts
 {
     public static class Scenes
     {
