@@ -1,4 +1,4 @@
-﻿using System;
+﻿using BaCon;
 using mBuilding.Scripts.Game.Gameplay.Root.View;
 using mBuilding.Scripts.Game.MainMenu.Root;
 using R3;
@@ -10,8 +10,19 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
     {
         [SerializeField] private UIGameplayRootBinder _sceneUIRootPrefab;
 
-        public Observable<GameplayExitParams> Run(UIRootView uiRoot, GameplayEnterParams enterParams)
+        public Observable<GameplayExitParams> Run(DIContainer gameplayContainer, GameplayEnterParams enterParams)
         {
+            GameplayRegistrations.Register(gameplayContainer, enterParams);
+            var gameplayViewModelsContainer = new DIContainer(gameplayContainer);
+            GameplayViewModelsRegistrations.Register(gameplayViewModelsContainer);
+            
+            ///
+            
+            // Для теста:
+            gameplayViewModelsContainer.Resolve<UIGameplayRootViewModel>();
+            gameplayViewModelsContainer.Resolve<WorldGameplayRootViewModel>();
+            
+            var uiRoot = gameplayContainer.Resolve<UIRootView>();
             var uiScene = Instantiate(_sceneUIRootPrefab);
             uiRoot.AttachSceneUI(uiScene.gameObject);
 
