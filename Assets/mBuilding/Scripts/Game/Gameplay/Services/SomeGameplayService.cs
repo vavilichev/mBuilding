@@ -20,15 +20,15 @@ namespace mBuilding.Scripts.Game.Gameplay.Services
             _someCommonService = someCommonService;
             Debug.Log(GetType().Name + " has been created");
             
-            gameState.Buildings.ForEach(b => Debug.Log($"Building: {b.TypeId}"));
-            gameState.Buildings.ObserveAdd().Subscribe(e => Debug.Log($"Building added: {e.Value.TypeId}"));
-            gameState.Buildings.ObserveRemove().Subscribe(e => Debug.Log($"Building removed: {e.Value.TypeId}"));
+            // gameState.Buildings.ForEach(b => Debug.Log($"Building: {b.TypeId}"));
+            // gameState.Buildings.ObserveAdd().Subscribe(e => Debug.Log($"Building added: {e.Value.TypeId}"));
+            // gameState.Buildings.ObserveRemove().Subscribe(e => Debug.Log($"Building removed: {e.Value.TypeId}"));
             
-            AddBuilding("Васян");
-            AddBuilding("Стасян");
-            AddBuilding("Реклама");
-            
-            RemoveBuilding("Реклама");
+            // AddBuilding("Васян");
+            // AddBuilding("Стасян");
+            // AddBuilding("Реклама");
+            //
+            // RemoveBuilding("Реклама");
         }
 
         public void Dispose()

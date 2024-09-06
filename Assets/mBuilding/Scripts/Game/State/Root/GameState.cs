@@ -7,6 +7,7 @@ namespace mBuilding.Scripts.Game.State.Root
     [Serializable]
     public class GameState
     {
+        public int GlobalEntityId;
         public List<BuildingEntity> Buildings;
     }
 }
