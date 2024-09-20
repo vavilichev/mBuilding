@@ -1,6 +1,7 @@
 ﻿using BaCon;
 using mBuilding.Scripts.Game.Gameplay.Commands;
 using mBuilding.Scripts.Game.Gameplay.Root.View;
+using mBuilding.Scripts.Game.Gameplay.Services;
 using mBuilding.Scripts.Game.MainMenu.Root;
 using mBuilding.Scripts.Game.State;
 using mBuilding.Scripts.Game.State.cmd;
@@ -36,16 +37,13 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
             );
             
             /// 
-            
-            
-            var cmd = new CommandProcessor(gameStateProvider);
-            
-            cmd.RegisterHandler(new CmdPlaceBuildingHandler(gameStateProvider.GameState));
 
-            ///
-            cmd.Process(new CmdPlaceBuilding("Васян", GetRandomPosition()));
-            cmd.Process(new CmdPlaceBuilding("Стасян", GetRandomPosition()));
-            cmd.Process(new CmdPlaceBuilding("Борян", GetRandomPosition()));
+
+            var buildingsService = gameplayContainer.Resolve<BuildingsService>();
+            
+            buildingsService.PlaceBuilding("Васян", GetRandomPosition());
+            buildingsService.PlaceBuilding("Стасян", GetRandomPosition());
+            buildingsService.PlaceBuilding("Борян", GetRandomPosition());
             
             /// 
             
