@@ -97,14 +97,14 @@ namespace mBuilding.Scripts.Game.State
             {
                 Buildings = new List<BuildingEntity>
                 {
-                    new()
-                    {
-                        TypeId = "PRO100"
-                    },
-                    new()
-                    {
-                        TypeId = "STARIK"
-                    }
+                    // new()
+                    // {
+                    //     TypeId = "PRO100"
+                    // },
+                    // new()
+                    // {
+                    //     TypeId = "STARIK"
+                    // }
                 }
             };
                 

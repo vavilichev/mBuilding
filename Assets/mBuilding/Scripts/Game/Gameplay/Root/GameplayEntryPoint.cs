@@ -42,9 +42,9 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
 
             var buildingsService = gameplayContainer.Resolve<BuildingsService>();
             
-            buildingsService.PlaceBuilding("Васян", GetRandomPosition());
-            buildingsService.PlaceBuilding("Стасян", GetRandomPosition());
-            buildingsService.PlaceBuilding("Борян", GetRandomPosition());
+            buildingsService.PlaceBuilding("dummy", GetRandomPosition());
+            buildingsService.PlaceBuilding("dummy", GetRandomPosition());
+            buildingsService.PlaceBuilding("dummy", GetRandomPosition());
             
             /// 
             
