@@ -2,13 +2,11 @@
 {
     public class GameplayEnterParams : SceneEnterParams
     {
-        public string SaveFileName { get; }
-        public int LevelNumber { get; }
+        public int MapId { get; }
         
-        public GameplayEnterParams(string saveFileName, int levelNumber) : base(Scenes.GAMEPLAY)
+        public GameplayEnterParams(int mapId) : base(Scenes.GAMEPLAY)
         {
-            SaveFileName = saveFileName;
-            LevelNumber = levelNumber;
+            MapId = mapId;
         }
     }
 }

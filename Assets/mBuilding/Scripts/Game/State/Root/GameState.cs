@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using mBuilding.Scripts.Game.State.Buildings;
+using mBuilding.Scripts.Game.State.Maps;
 
 namespace mBuilding.Scripts.Game.State.Root
 {
@@ -8,6 +8,12 @@ namespace mBuilding.Scripts.Game.State.Root
     public class GameState
     {
         public int GlobalEntityId;
-        public List<BuildingEntity> Buildings;
+        public int CurrentMapId;
+        public List<MapState> Maps;
+
+        public int CreateEntityId()
+        {
+            return GlobalEntityId++;
+        }
     }
 }

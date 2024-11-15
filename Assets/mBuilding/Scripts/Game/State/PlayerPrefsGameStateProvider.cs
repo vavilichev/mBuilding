@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using mBuilding.Scripts.Game.State.Buildings;
+using mBuilding.Scripts.Game.State.Maps;
 using mBuilding.Scripts.Game.State.Root;
 using R3;
 using UnityEngine;
@@ -95,17 +96,7 @@ namespace mBuilding.Scripts.Game.State
             // Состояние по умолчанию из настроек, мы делаем фейк
             _gameStateOrigin = new GameState
             {
-                Buildings = new List<BuildingEntity>
-                {
-                    // new()
-                    // {
-                    //     TypeId = "PRO100"
-                    // },
-                    // new()
-                    // {
-                    //     TypeId = "STARIK"
-                    // }
-                }
+                Maps = new List<MapState>()
             };
                 
             return new GameStateProxy(_gameStateOrigin);

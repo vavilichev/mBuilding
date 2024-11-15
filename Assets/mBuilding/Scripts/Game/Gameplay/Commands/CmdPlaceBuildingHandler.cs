@@ -1,6 +1,8 @@
-﻿using mBuilding.Scripts.Game.State.Buildings;
+﻿using System.Linq;
+using mBuilding.Scripts.Game.State.Buildings;
 using mBuilding.Scripts.Game.State.cmd;
 using mBuilding.Scripts.Game.State.Root;
+using UnityEngine;
 
 namespace mBuilding.Scripts.Game.Gameplay.Commands
 {
@@ -15,7 +17,14 @@ namespace mBuilding.Scripts.Game.Gameplay.Commands
         
         public bool Handle(CmdPlaceBuilding command)
         {
-            var entityId = _gameState.GetEntityId();
+            var currentMap = _gameState.Maps.FirstOrDefault(m => m.Id == _gameState.CurrentMapId.CurrentValue);
+            if (currentMap == null)
+            {
+                Debug.LogError($"Couldn't find MapState for id: {_gameState.CurrentMapId.CurrentValue}");
+                return false;
+            }
+
+            var entityId = _gameState.CreateEntityId();
             var newBuildingEntity = new BuildingEntity
             {
                 Id = entityId,
@@ -24,7 +33,8 @@ namespace mBuilding.Scripts.Game.Gameplay.Commands
             };
 
             var newBuildingEntityProxy = new BuildingEntityProxy(newBuildingEntity);
-            _gameState.Buildings.Add(newBuildingEntityProxy);
+            
+            currentMap.Buildings.Add(newBuildingEntityProxy);
 
             return true;
         }

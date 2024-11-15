@@ -1,11 +1,6 @@
 ﻿using BaCon;
-using mBuilding.Scripts.Game.Gameplay.Commands;
 using mBuilding.Scripts.Game.Gameplay.Root.View;
-using mBuilding.Scripts.Game.Gameplay.Services;
 using mBuilding.Scripts.Game.MainMenu.Root;
-using mBuilding.Scripts.Game.State;
-using mBuilding.Scripts.Game.State.cmd;
-using ObservableCollections;
 using R3;
 using UnityEngine;
 
@@ -22,32 +17,6 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
             var gameplayViewModelsContainer = new DIContainer(gameplayContainer);
             GameplayViewModelsRegistrations.Register(gameplayViewModelsContainer);
             
-            var gameStateProvider = gameplayContainer.Resolve<IGameStateProvider>();
-            
-            ///
-            
-            gameStateProvider.GameState.Buildings.ObserveAdd().Subscribe(e =>
-                {
-                    var building = e.Value;
-                    Debug.Log("Building placed. Type id: " +
-                              building.TypeId
-                              + " Id: " + building.Id
-                              + ", Position: " +
-                              building.Position.Value);
-                }
-            );
-            
-            /// 
-
-
-            var buildingsService = gameplayContainer.Resolve<BuildingsService>();
-            
-            buildingsService.PlaceBuilding("dummy", GetRandomPosition());
-            buildingsService.PlaceBuilding("dummy", GetRandomPosition());
-            buildingsService.PlaceBuilding("dummy", GetRandomPosition());
-            
-            /// 
-            
             // Для теста:
             _worldRootBinder.Bind(gameplayViewModelsContainer.Resolve<WorldGameplayRootViewModel>());
             
@@ -60,7 +29,7 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
             var exitSceneSignalSubj = new Subject<Unit>();
             uiScene.Bind(exitSceneSignalSubj);
 
-            Debug.Log($"GAMEPLAY ENTRY POINT: save file name = {enterParams.SaveFileName}, level to load = {enterParams.LevelNumber}");
+            Debug.Log($"GAMEPLAY ENTRY POINT, level to load = {enterParams.MapId}");
             
             var mainMenuEnterParams = new MainMenuEnterParams("Fatality");
             var exitParams = new GameplayExitParams(mainMenuEnterParams);
