@@ -21,6 +21,8 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
             var cmd = new CommandProcessor(gameStateProvider);
             cmd.RegisterHandler(new CmdPlaceBuildingHandler(gameState));
             cmd.RegisterHandler(new CmdCreateMapStateHandler(gameState, gameSettings));
+            cmd.RegisterHandler(new CmdResourcesAddHandler(gameState));
+            cmd.RegisterHandler(new CmdResourcesSpendHandler(gameState));
             container.RegisterInstance<ICommandProcessor>(cmd);
             
             // На данный момент мы знаем, что мы пытаемся загрузить карту. Но не знаем, есть ли ее состояние вообще.
@@ -47,6 +49,8 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
                 gameSettings.BuildingsSettings,
                 cmd)
             ).AsSingle();
+
+            container.RegisterFactory(_ => new ResourcesService(gameState.Resources, cmd)).AsSingle();
         }
     }
 }

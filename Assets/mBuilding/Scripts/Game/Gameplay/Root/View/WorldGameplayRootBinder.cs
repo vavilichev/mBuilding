@@ -10,9 +10,13 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
     {
         private readonly Dictionary<int, BuildingBinder> _createBuildingsMap = new();
         private readonly CompositeDisposable _disposables = new();
+
+        private WorldGameplayRootViewModel _viewModel;
         
         public void Bind(WorldGameplayRootViewModel viewModel)
         {
+            _viewModel = viewModel;
+            
             foreach (var buildingViewModel in viewModel.AllBuildings)
             {
                 CreateBuilding(buildingViewModel);
@@ -49,6 +53,14 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
             {
                 Destroy(buildingBinder.gameObject);
                 _createBuildingsMap.Remove(buildingViewModel.BuildingEntityId);
+            }
+        }
+        
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _viewModel.HandleTestInput();
             }
         }
     }

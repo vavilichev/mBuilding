@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using mBuilding.Scripts.Game.State.Buildings;
+using mBuilding.Scripts.Game.State.GameResources;
 using mBuilding.Scripts.Game.State.Maps;
 using mBuilding.Scripts.Game.State.Root;
 using R3;
@@ -96,7 +96,13 @@ namespace mBuilding.Scripts.Game.State
             // Состояние по умолчанию из настроек, мы делаем фейк
             _gameStateOrigin = new GameState
             {
-                Maps = new List<MapState>()
+                Maps = new List<MapState>(),
+                Resources = new List<ResourceData>()
+                {
+                    new() { Amount = 0, ResourceType = ResourceType.SoftCurrency },
+                    new() { Amount = 0, ResourceType = ResourceType.HardCurrency },
+                    new() { Amount = 0, ResourceType = ResourceType.Wood }
+                }
             };
                 
             return new GameStateProxy(_gameStateOrigin);
