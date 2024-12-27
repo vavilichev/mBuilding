@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Linq;
 using BaCon;
+using mBuilding.Scripts.Game.Common;
 using mBuilding.Scripts.Game.Gameplay.Commands;
 using mBuilding.Scripts.Game.Gameplay.Services;
 using mBuilding.Scripts.Game.Settings;
 using mBuilding.Scripts.Game.State;
 using mBuilding.Scripts.Game.State.cmd;
+using R3;
 
 namespace mBuilding.Scripts.Game.Gameplay.Root
 {
@@ -17,6 +19,8 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
             var gameState = gameStateProvider.GameState;
             var settingsProvider = container.Resolve<ISettingsProvider>();
             var gameSettings = settingsProvider.GameSettings;
+            
+            container.RegisterInstance(AppConstants.EXIT_SCENE_REQUEST_TAG, new Subject<Unit>());
 
             var cmd = new CommandProcessor(gameStateProvider);
             cmd.RegisterHandler(new CmdPlaceBuildingHandler(gameState));
