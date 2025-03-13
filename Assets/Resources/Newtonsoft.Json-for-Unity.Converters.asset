@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce56e4dbb13e1644aa983b6dd170e4a7, type: 3}
+  m_Name: Newtonsoft.Json-for-Unity.Converters
+  m_EditorClassIdentifier: 
+  useUnityContractResolver: 1
+  useAllOutsideConverters: 1
+  outsideConverters: []
+  useAllUnityConverters: 0
+  unityConverters:
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.AI.NavMesh.NavMeshQueryFilterConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.AI.NavMesh.NavMeshTriangulationConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Camera.CullingGroupEventConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Geometry.BoundsConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Geometry.BoundsIntConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Geometry.PlaneConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Geometry.RectConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Geometry.RectIntConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Geometry.RectOffsetConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Graphics.ResolutionConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Hashing.Hash128Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.Color32Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.ColorConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.Matrix4x4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.QuaternionConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.SphericalHarmonicsL2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.Vector2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 1
+    converterName: Newtonsoft.Json.UnityConverters.Math.Vector2IntConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.Vector3Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.Vector3IntConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Math.Vector4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Bool2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Bool3Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Bool4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Double2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Double3Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Double4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Float2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Float3Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Float4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Half2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Half3Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Half4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.HalfConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Int2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Int3Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Int4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.QuaternionConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Uint2Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Uint3Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Mathematics.Uint4Converter
+    converterAssembly: Newtonsoft.Json.UnityConverters.Mathematics
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.NativeArray.NativeArrayConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Physics.JointDriveConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Physics.JointLimitsConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Physics.SoftJointLimitConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Physics2D.ColliderDistance2DConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Physics2D.ContactFilter2DConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Random.RandomStateConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Scripting.LayerMaskConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.UnityConverters.Scripting.RangeIntConverter
+    converterAssembly: Newtonsoft.Json.UnityConverters
+    settings: []
+  useAllJsonNetConverters: 0
+  jsonNetConverters:
+  - enabled: 1
+    converterName: Newtonsoft.Json.Converters.StringEnumConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 1
+    converterName: Newtonsoft.Json.Converters.VersionConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.BinaryConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.BsonObjectIdConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.DataSetConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.DataTableConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.DiscriminatedUnionConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.EntityKeyMemberConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.ExpandoObjectConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.IsoDateTimeConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.JavaScriptDateTimeConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.KeyValuePairConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.RegexConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.UnixDateTimeConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  - enabled: 0
+    converterName: Newtonsoft.Json.Converters.XmlNodeConverter
+    converterAssembly: Newtonsoft.Json
+    settings: []
+  autoSyncConverters: 1

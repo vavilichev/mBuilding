@@ -17,16 +17,16 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
         {
             _viewModel = viewModel;
             
-            foreach (var buildingViewModel in viewModel.AllBuildings)
-            {
-                CreateBuilding(buildingViewModel);
-            }
-
-            _disposables.Add(viewModel.AllBuildings.ObserveAdd()
-                .Subscribe(e => CreateBuilding(e.Value)));
-            
-            _disposables.Add(viewModel.AllBuildings.ObserveRemove()
-                .Subscribe(e => DestroyBuilding(e.Value)));
+            // foreach (var buildingViewModel in viewModel.AllBuildings)
+            // {
+            //     CreateBuilding(buildingViewModel);
+            // }
+            //
+            // _disposables.Add(viewModel.AllBuildings.ObserveAdd()
+            //     .Subscribe(e => CreateBuilding(e.Value)));
+            //
+            // _disposables.Add(viewModel.AllBuildings.ObserveRemove()
+            //     .Subscribe(e => DestroyBuilding(e.Value)));
         }
 
         private void OnDestroy()

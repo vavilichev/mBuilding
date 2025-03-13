@@ -2,11 +2,11 @@
 
 namespace mBuilding.Scripts.Game.Gameplay.Commands
 {
-    public class CmdCreateMapState: ICommand
+    public class CmdCreateMap: ICommand
     {
         public readonly int MapId;
         
-        public CmdCreateMapState(int mapId)
+        public CmdCreateMap(int mapId)
         {
             MapId = mapId;
         }

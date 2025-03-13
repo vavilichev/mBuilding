@@ -1,26 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using mBuilding.Scripts.Game.Settings;
-using mBuilding.Scripts.Game.State.Buildings;
+// using mBuilding.Scripts.Game.State.Buildings;
 using mBuilding.Scripts.Game.State.cmd;
+using mBuilding.Scripts.Game.State.Entities;
+using mBuilding.Scripts.Game.State.Entities.Mergeable.Buildings;
 using mBuilding.Scripts.Game.State.Maps;
 using mBuilding.Scripts.Game.State.Root;
 using UnityEngine;
 
 namespace mBuilding.Scripts.Game.Gameplay.Commands
 {
-    public class CmdCreateMapStateHandler : ICommandHandler<CmdCreateMapState>
+    public class CmdCreateMapHandler : ICommandHandler<CmdCreateMap>
     {
         private readonly GameStateProxy _gameState;
         private readonly GameSettings _gameSettings;
 
-        public CmdCreateMapStateHandler(GameStateProxy gameState, GameSettings gameSettings)
+        public CmdCreateMapHandler(GameStateProxy gameState, GameSettings gameSettings)
         {
             _gameState = gameState;
             _gameSettings = gameSettings;
         }
 
-        public bool Handle(CmdCreateMapState command)
+        public bool Handle(CmdCreateMap command)
         {
             var isMapAlreadyExisted = _gameState.Maps.Any(m => m.Id == command.MapId);
 
@@ -33,24 +35,27 @@ namespace mBuilding.Scripts.Game.Gameplay.Commands
             var newMapSettings = _gameSettings.MapsSettings.Maps.First(m => m.MapId == command.MapId);
             var newMapInitialStateSettings = newMapSettings.InitialStateSettings;
 
-            var initialBuildings = new List<BuildingEntity>();
+            var initialEntities = new List<EntityData>();
             foreach (var buildingSettings in newMapInitialStateSettings.Buildings)
             {
-                var initialBuilding = new BuildingEntity
+                var initialBuilding = new BuildingEntityData
                 {
-                    Id = _gameState.CreateEntityId(),
-                    TypeId = buildingSettings.TypeId,
+                    UniqueId = _gameState.CreateEntityId(),
+                    ConfigId = buildingSettings.TypeId,
+                    Type = EntityType.Building,
                     Position = buildingSettings.Position,
-                    Level = buildingSettings.Level
+                    Level = buildingSettings.Level,
+                    IsAutoCollectionEnabled = false,
+                    LastClickedTimeMS = 0
                 };
-
-                initialBuildings.Add(initialBuilding);
+            
+                initialEntities.Add(initialBuilding);
             }
 
-            var newMapState = new MapState
+            var newMapState = new MapData
             {
                 Id = command.MapId,
-                Buildings = initialBuildings
+                Entities = initialEntities
             };
 
             var newMapStateProxy = new Map(newMapState);

@@ -13,6 +13,7 @@
     "com.unity.timeline": "1.8.7",
     "com.unity.ugui": "2.0.0",
     "com.unity.visualscripting": "1.9.4",
+    "jillejr.newtonsoft.json-for-unity.converters": "https://github.com/jilleJr/Newtonsoft.Json-for-Unity.Converters.git#1.6.3",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
