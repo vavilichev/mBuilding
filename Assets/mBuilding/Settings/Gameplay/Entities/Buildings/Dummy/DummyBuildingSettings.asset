@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaf1a6dfc294ec59592bcc96a659c34, type: 3}
   m_Name: DummyBuildingSettings
   m_EditorClassIdentifier: 
-  TypeId: dummy
-  TitleLID: sadsadsa
-  DescriptionLID: sfasfas
-  LevelsSettings:
+  <EntityType>k__BackingField: 1
+  <ConfigId>k__BackingField: dummy
+  <TitleLid>k__BackingField: 
+  <DescriptionLid>k__BackingField: 
+  <PrefabPath>k__BackingField: 
+  <Levels>k__BackingField:
   - {fileID: 11400000, guid: 71a0aa560deda2c4a9f6ce6852204529, type: 2}
   - {fileID: 11400000, guid: 08626078d4a43b84e9c391b647bae040, type: 2}
   - {fileID: 11400000, guid: d294ee518c22242449d1ae349d285639, type: 2}

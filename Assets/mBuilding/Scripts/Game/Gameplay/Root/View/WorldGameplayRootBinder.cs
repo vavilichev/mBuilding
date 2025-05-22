@@ -17,16 +17,16 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
         {
             _viewModel = viewModel;
             
-            // foreach (var buildingViewModel in viewModel.AllBuildings)
-            // {
-            //     CreateBuilding(buildingViewModel);
-            // }
-            //
-            // _disposables.Add(viewModel.AllBuildings.ObserveAdd()
-            //     .Subscribe(e => CreateBuilding(e.Value)));
-            //
-            // _disposables.Add(viewModel.AllBuildings.ObserveRemove()
-            //     .Subscribe(e => DestroyBuilding(e.Value)));
+            foreach (var buildingViewModel in viewModel.AllBuildings)
+            {
+                CreateBuilding(buildingViewModel);
+            }
+            
+            _disposables.Add(viewModel.AllBuildings.ObserveAdd()
+                .Subscribe(e => CreateBuilding(e.Value)));
+            
+            _disposables.Add(viewModel.AllBuildings.ObserveRemove()
+                .Subscribe(e => DestroyBuilding(e.Value)));
         }
 
         private void OnDestroy()
@@ -37,7 +37,7 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
         private void CreateBuilding(BuildingViewModel buildingViewModel)
         {
             var buildingLevel = buildingViewModel.Level.CurrentValue;
-            var buildingType = buildingViewModel.TypeId;
+            var buildingType = buildingViewModel.ConfigId;
             var prefabBuildingLevelPath = $"Prefabs/Gameplay/Buildings/Building_{buildingType}_{buildingLevel}";
             var buildingPrefab = Resources.Load<BuildingBinder>(prefabBuildingLevelPath);
             var createdBuilding = Instantiate(buildingPrefab);

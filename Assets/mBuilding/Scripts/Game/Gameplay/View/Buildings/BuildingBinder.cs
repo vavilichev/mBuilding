@@ -6,7 +6,8 @@ namespace mBuilding.Scripts.Game.Gameplay.View.Buildings
     {
         public void Bind(BuildingViewModel viewModel)
         {
-            transform.position = viewModel.Position.CurrentValue;
+            var position2D = viewModel.Position.CurrentValue;
+            transform.position = new Vector3(position2D.x, 0, position2D.y);
         }
     }
 }

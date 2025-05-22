@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17fab3bf16b1476eb29a8399dfb256aa, type: 3}
-  m_Name: DummyBuildingLevelSettings 3
+  m_Name: DummyBuildingLevelSettings 1
   m_EditorClassIdentifier: 
-  Level: 3
-  BaseIncome: 1000
+  <Level>k__BackingField: 1
+  <PrefabSkinPath>k__BackingField: 
+  <BaseIncome>k__BackingField: 0

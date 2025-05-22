@@ -14,13 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MapId: 0
   InitialStateSettings:
-    Buildings:
-    - TypeId: dummy
-      Level: 1
-      Position: {x: 5, y: 3}
-    - TypeId: dummy
-      Level: 2
-      Position: {x: 10, y: 2}
-    - TypeId: dummy
-      Level: 3
-      Position: {x: 5, y: 0}
+    Entities:
+    - <EntityType>k__BackingField: 1
+      <ConfigId>k__BackingField: dummy
+      <Level>k__BackingField: 1
+      <InitialPosition>k__BackingField: {x: 0, y: 0}
+    - <EntityType>k__BackingField: 1
+      <ConfigId>k__BackingField: dummy
+      <Level>k__BackingField: 2
+      <InitialPosition>k__BackingField: {x: 3, y: 4}
+    - <EntityType>k__BackingField: 1
+      <ConfigId>k__BackingField: dummy
+      <Level>k__BackingField: 3
+      <InitialPosition>k__BackingField: {x: -3, y: 4}

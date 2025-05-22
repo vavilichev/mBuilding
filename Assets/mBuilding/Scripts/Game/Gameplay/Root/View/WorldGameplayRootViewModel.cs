@@ -13,12 +13,12 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
     {
         private readonly ResourcesService _resourcesService;
         
-        // public readonly IObservableCollection<BuildingViewModel> AllBuildings;
+        public readonly IObservableCollection<BuildingViewModel> AllBuildings;
 
-        public WorldGameplayRootViewModel(/*BuildingsService buildingsService,*/ ResourcesService resourcesService)
+        public WorldGameplayRootViewModel(BuildingsService buildingsService, ResourcesService resourcesService)
         {
             _resourcesService = resourcesService;
-            // AllBuildings = buildingsService.AllBuildings;
+            AllBuildings = buildingsService.AllBuildings;
             
             resourcesService.ObserveResource(ResourceType.SoftCurrency)
                 .Subscribe(newValue => Debug.Log($"SoftCurrency: {newValue}"));

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17fab3bf16b1476eb29a8399dfb256aa, type: 3}
   m_Name: DummyBuildingLevelSettings 2
   m_EditorClassIdentifier: 
-  Level: 2
-  BaseIncome: 100
+  <Level>k__BackingField: 2
+  <PrefabSkinPath>k__BackingField: 
+  <BaseIncome>k__BackingField: 0
