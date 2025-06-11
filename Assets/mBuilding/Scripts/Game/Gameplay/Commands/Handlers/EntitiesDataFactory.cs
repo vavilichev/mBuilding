@@ -13,9 +13,7 @@ namespace mBuilding.Scripts.Game.Gameplay.Commands
             switch (initialSettings.EntityType)
             {
                 case EntityType.Building:
-                    var buildingEntityData = CreateEntity<BuildingEntityData>(initialSettings);
-                    UpdateBuildingEntity(buildingEntityData);
-                    return buildingEntityData;
+                    return CreateEntity<BuildingEntityData>(initialSettings);
                 
                 default:
                     throw new Exception($"Not implemented entity creation: {initialSettings.EntityType}");
@@ -31,7 +29,7 @@ namespace mBuilding.Scripts.Game.Gameplay.Commands
                 initialSettings.InitialPosition);
         }
 
-        private static T CreateEntity<T>(EntityType type, string configId, int level, Vector2Int position)
+        public static T CreateEntity<T>(EntityType type, string configId, int level, Vector2Int position)
             where T : EntityData, new()
         {
             var entity = new T
@@ -41,6 +39,16 @@ namespace mBuilding.Scripts.Game.Gameplay.Commands
                 Level = level,
                 Position = position
             };
+
+            switch (entity)
+            {
+                case BuildingEntityData buildingEntityData:
+                    UpdateBuildingEntity(buildingEntityData);
+                    break;
+                
+                default:
+                    throw new Exception($"Not implemented entity creation: {type}");
+            }
 
             return entity;
         }

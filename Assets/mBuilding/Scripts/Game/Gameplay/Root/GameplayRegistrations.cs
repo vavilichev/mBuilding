@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using BaCon;
+using mBuilding.Game;
 using mBuilding.Scripts.Game.Common;
 using mBuilding.Scripts.Game.Gameplay.Commands;
 using mBuilding.Scripts.Game.Gameplay.Services;
@@ -23,7 +24,7 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
             container.RegisterInstance(AppConstants.EXIT_SCENE_REQUEST_TAG, new Subject<Unit>());
 
             var cmd = new CommandProcessor(gameStateProvider);
-            // cmd.RegisterHandler(new CmdPlaceBuildingHandler(gameState));
+            cmd.RegisterHandler(new CmdPlaceEntityHandler(gameState));
             cmd.RegisterHandler(new CmdCreateMapHandler(gameState, gameSettings));
             cmd.RegisterHandler(new CmdResourcesAddHandler(gameState));
             cmd.RegisterHandler(new CmdResourcesSpendHandler(gameState));
@@ -55,6 +56,9 @@ namespace mBuilding.Scripts.Game.Gameplay.Root
             ).AsSingle();
 
             container.RegisterFactory(_ => new ResourcesService(gameState.Resources, cmd)).AsSingle();
+
+            // TODO: Обвешать решетками
+            container.RegisterFactory(c => new CheatsService(c.Resolve<BuildingsService>())).AsSingle();
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using BaCon;
+using mBuilding.Game;
+using mBuilding.Game.View.UI;
 using mBuilding.Scripts.Game.Gameplay.Services;
 
 namespace mBuilding.Scripts.Game.Gameplay.Root.View
@@ -8,7 +10,9 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
         public static void Register(DIContainer container)
         {
             container.RegisterFactory(c => new GameplayUIManager(container)).AsSingle();
-            container.RegisterFactory(c => new UIGameplayRootViewModel()).AsSingle();
+            container.RegisterFactory(c => new UIGameplayRootViewModel(
+                c.Resolve<CheatsService>()))
+                .AsSingle();
             container
                 .RegisterFactory(c => new WorldGameplayRootViewModel(
                         c.Resolve<BuildingsService>(), 

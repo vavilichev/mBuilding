@@ -61,9 +61,9 @@ namespace mBuilding.Scripts.Game.Gameplay.Services
             });
         }
 
-        public bool PlaceBuilding(string buildingTypeId, Vector3Int position)
+        public bool PlaceBuilding(string buildingConfigId, int level, Vector2Int position)
         {
-            var command = new CmdPlaceBuilding(buildingTypeId, position);
+            var command = new CmdPlaceEntity(EntityType.Building, buildingConfigId, level, position);
             var result = _cmd.Process(command);
 
             return result;

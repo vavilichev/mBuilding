@@ -60,7 +60,7 @@ namespace mBuilding.Scripts.Game.Gameplay.Root.View
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                _viewModel.HandleTestInput();
+                //_viewModel.HandleTestInput();
             }
         }
     }

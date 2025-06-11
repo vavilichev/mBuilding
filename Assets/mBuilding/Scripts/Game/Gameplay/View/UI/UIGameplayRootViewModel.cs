@@ -1,10 +1,14 @@
-﻿
-using mBuilding.Scripts.MVVM.UI;
+﻿using mBuilding.Scripts.MVVM.UI;
 
-namespace mBuilding.Scripts.Game.Gameplay.Root.View
+namespace mBuilding.Game.View.UI
 {
     public class UIGameplayRootViewModel : UIRootViewModel
     {
-        // Делаем свои кастомные штучки для сцены, если надо
+        public readonly CheatPanelViewModel CheatPanelViewModel;
+
+        public UIGameplayRootViewModel(CheatsService cheatsService)
+        {
+            CheatPanelViewModel = new CheatPanelViewModel(cheatsService);
+        }
     }
 }
